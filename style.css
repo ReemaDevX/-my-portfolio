@@ -43,13 +43,76 @@ body {
   gap: 8px;
   animation: fadeInUp 1.2s ease forwards;
 }
-.hero-text h1 {font-size: 3rem; line-height: 1.2; font-family: 'Montserrat', sans-serif; font-weight: 700; opacity:0; transform:translateY(20px); animation: fadeInUp 1s ease forwards; animation-delay:0.2s;}
-.hero-text h2 {font-size: 1.5rem; font-weight: 400; font-family: 'Montserrat', sans-serif; color: #dce6f5; opacity:0; transform:translateY(20px); animation:fadeInUp 1s ease forwards; animation-delay:0.4s;}
-.hero-text p {font-size: 1.1rem; color: #e0e8f5; margin-top:10px; opacity:0; transform:translateY(20px); animation:fadeInUp 1s ease forwards; animation-delay:0.6s;}
-.hero-text .btn {display: inline-flex; align-items: center; gap: 8px; background: transparent; color: #1a73e8; border: 2px solid #1a73e8; padding: 12px 24px; border-radius:6px; font-weight:bold; transition:0.3s; opacity:0; transform: translateY(20px); animation: fadeInUp 1s ease forwards; animation-delay:0.8s;}
-.hero-text .btn:hover {background: #1a73e8; color: #fff; transform: translateY(-2px);}
-.hero-img img {width:100%; max-width:300px; height:auto; border-radius:50%; padding:5px; box-shadow: 0 10px 25px rgba(0,0,0,0.4); transition: transform 0.3s; opacity:0; transform:translateY(20px); animation:fadeInUp 1s ease forwards; animation-delay:1s;}
+.hero-text h1 {
+  font-size: 3rem;
+  line-height: 1.2;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  margin: 0;
+  opacity:0;
+  transform:translateY(20px);
+  animation: fadeInUp 1s ease forwards;
+  animation-delay:0.2s;
+}
+.hero-text h2 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  font-family: 'Montserrat', sans-serif;
+  color: #dce6f5;
+  margin: 0;
+  opacity:0;
+  transform:translateY(20px);
+  animation:fadeInUp 1s ease forwards;
+  animation-delay:0.4s;
+}
+.hero-text p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #e0e8f5;
+  margin-top: 10px;
+  margin-bottom:0;
+  opacity:0;
+  transform:translateY(20px);
+  animation:fadeInUp 1s ease forwards;
+  animation-delay:0.6s;
+}
+.hero-text .btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  color: #1a73e8;
+  border: 2px solid #1a73e8;
+  padding: 12px 24px;
+  border-radius:6px; 
+  text-decoration:none;
+  font-weight:bold; 
+  transition:0.3s;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s ease forwards;
+  animation-delay: 0.8s;
+}
+.hero-text .btn:hover {
+  background: #1a73e8;
+  color: #fff;
+  transform: translateY(-2px);
+}
+.hero-img img {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  border-radius: 50%;
+  padding: 5px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+  transition: transform 0.3s;
+  opacity:0;
+  transform:translateY(20px);
+  animation:fadeInUp 1s ease forwards;
+  animation-delay:1s;
+}
 .hero-img img:hover {transform: scale(1.05);}
+@keyframes fadeInUp {to {opacity:1; transform:translateY(0);}}
 
 /* ===== Buttons ===== */
 .btn {display:inline-flex; align-items:center; gap:8px; background:transparent; color:#1a73e8; border:2px solid #1a73e8; padding:12px 24px; border-radius:6px; text-decoration:none; font-weight:bold; transition:0.3s;}
@@ -60,52 +123,68 @@ body {
 section h2 {font-size:2rem; margin:40px 0 20px; text-align:left; padding-left:10%; font-family:'Montserrat', sans-serif;}
 
 /* ===== Cards General ===== */
-.card-grid {display:flex; gap:20px; flex-wrap:nowrap; overflow-x:auto; padding:0 10%; margin-bottom:20px;}
-.card-grid::-webkit-scrollbar {display:none;}
-.card {background:#082d6e; padding:20px; border-radius:8px; flex:0 0 auto; min-width:180px; max-width:220px; text-align:center; transition:transform 0.3s, background 0.3s; color:#fff;}
+.card-grid {display:flex; gap:20px; flex-wrap:wrap; justify-content:center; margin-bottom:20px;}
+.card {background:#082d6e; padding:20px; border-radius:8px; flex:1 1 180px; max-width:220px; text-align:center; transition:transform 0.3s, background 0.3s; color:#fff;}
 .card:hover {transform:translateY(-5px); background:#0d3c91;}
 .card img {width:100%; border-radius:6px; margin-bottom:10px;}
 
 /* ===== Skills Section ===== */
 .skills {overflow:hidden; position:relative; padding:40px 0;}
-.skills .scroll-container {display:flex; gap:20px; flex-wrap:nowrap; animation: scrollSkills 25s linear infinite; cursor: grab; padding:0 10%;}
+.skills .scroll-container {display:flex; gap:20px; flex-wrap:nowrap; animation: scrollSkills 25s linear infinite; will-change:transform; cursor: grab;}
 .skills:active .scroll-container {cursor: grabbing;}
 .skills:hover .scroll-container {animation-play-state:paused;}
-.skills .card {flex:0 0 auto; min-width:150px; padding:15px; text-align:center; border-radius:8px; background:#082d6e; transition:transform 0.3s, background 0.3s;}
-.skills .card i {font-size:1.8rem; margin-bottom:10px; display:block; animation: float 2s ease-in-out infinite; transition:transform 0.3s, color 0.3s;}
+.skills .card {flex:0 0 auto; min-width:180px; text-align:center; padding:20px; border-radius:8px; background:#082d6e; transition:transform 0.3s, background 0.3s; color:#fff;}
+.skills .card:hover {transform:translateY(-5px); background:#0d3c91;}
+.skills .card i {font-size:2rem; margin-bottom:10px; display:block; animation: float 2s ease-in-out infinite; transition:transform 0.3s, color 0.3s;}
 .skills .card:hover i {transform:scale(1.3) rotate(10deg); color:#37a6ff;}
 @keyframes float {0%{transform:translateY(0px);}50%{transform:translateY(-8px);}100%{transform:translateY(0px);} }
 @keyframes scrollSkills {0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
 
-/* ===== Two Columns (Testimonials & Services) ===== */
-.two-col {display:flex; gap:20px; flex-wrap:wrap; justify-content:center; padding:20px 10%;}
-.two-col .col {flex:1 1 250px; background:#082d6e; padding:20px; border-radius:8px; text-align:center; margin-bottom:20px;}
+/* ===== Two Columns ===== */
+.two-col {display:flex; justify-content:space-around; padding:40px 10%; background: linear-gradient(135deg, #0a3d91, #0b2d66);}
+.two-col .col {width:45%; text-align:left;}
+
+/* ===== Blog Section ===== */
+.blog {padding:40px 10%; background: linear-gradient(180deg, #021f47, #05295a);}
+.blog .card {max-width:250px; margin-bottom:20px; background: rgba(255,255,255,0.05); transition: transform 0.3s;}
+.blog .card h3 {margin:10px 0; text-align:center; font-family:'Montserrat', sans-serif;}
+.blog .card p {font-size:0.9rem; margin-bottom:10px; text-align:center; font-family:'Roboto', sans-serif;}
+.blog .card img {width:100%; height:180px; object-fit:cover; border-radius:6px; margin-bottom:10px;}
+
+/* ===== Article Pages ===== */
+.article {display:flex; justify-content:center; padding:80px 10%; position:relative; z-index:1;}
+.article-container {
+  background: rgba(255, 255, 255, 0.05);
+  padding:30px;
+  border-radius:12px;
+  max-width:900px;
+  width:100%;
+  color:#f6f0f0;
+  backdrop-filter: blur(5px);
+  text-align: left;
+}
+.article-container h1, .article-container h2 {
+  font-family: 'Montserrat', sans-serif;
+  margin-bottom: 15px;
+  color: #a1a199;
+}
+.article-container p, .article-container li {
+  font-family:'Roboto', sans-serif;
+  color:#c0c8d2;
+  line-height:1.6;
+}
+.article-container ul {list-style-type:disc; padding-left:20px;}
+.article-container img.article-img {width:100%; border-radius:8px; margin:20px 0;}
+.article-container .btn {display: inline-block; margin: 20px 0 0 0; text-align: left; padding: 10px 20px; font-size: 1rem;}
 
 /* ===== Social Section ===== */
-.social {padding:40px 0; text-align:center;}
-.social h2 {text-align:center; padding-left:0; margin-bottom:20px;}
-.social-links {display:flex; justify-content:center; gap:30px;}
-.social-links a svg, .social-links a i {width:28px; height:28px; display:block;}
+.social {padding:40px 10%; text-align:center; background:#061c44;}
+.social h2 {font-size:2rem; color:#ebeff5; margin-bottom:15px; text-align:left;}
+.social .social-links {display:flex; justify-content:center; gap:20px;}
+.social .social-links a {color:#fff; font-size:1.8rem; transition: color 0.3s;}
+.social .social-links a:hover {color:#1a73e8;}
+.social .social-links a svg {width:28px; height:28px; fill:white; transition:transform 0.3s, fill 0.3s;}
+.social .social-links a:hover svg {fill:#1a73e8; transform:scale(1.2);}
 
 /* ===== Footer ===== */
-footer {text-align:center; padding:20px 0; background:#021f47;}
-
-/* ===== Media Queries للجوال ===== */
-@media (max-width:768px){
-  .hero {flex-direction:column; text-align:center; padding:50px 5%;}
-  .hero-text, .hero-img {max-width:100%;}
-  .hero-text h1 {font-size:2.2rem;}
-  .hero-text h2 {font-size:1.2rem;}
-  .hero-text p {font-size:1rem;}
-  .hero-img img {max-width:200px; margin:20px auto;}
-  
-  .card-grid {flex-wrap:nowrap; overflow-x:auto; padding:0 5%;}
-  .card {min-width:160px; max-width:180px;}
-  
-  .skills .scroll-container {padding:0 5%;}
-  .skills .card {min-width:140px; padding:10px;}
-  .skills .card i {font-size:1.5rem;}
-  
-  .two-col {flex-direction:row; flex-wrap:wrap; gap:15px;}
-  .two-col .col {flex:1 1 45%; margin-bottom:15px;}
-}
+footer {padding:20px; background:#061c44; margin-top:30px; text-align:center;}
