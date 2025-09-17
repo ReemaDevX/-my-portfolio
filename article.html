@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Article</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <section class="article">
+    <div class="article-container" id="article-container"></div>
+  </section>
+
+  <script>
+    const articles = {
+      cybersecurity: {
+        title: "Intro to Cybersecurity",
+        date: "September 2025",
+        author: "Reema",
+        img: "images/B1.jpeg",
+        content: `<p>Learn the basics of cybersecurity to protect digital assets effectively.</p>
+                  <h2>Key Points</h2>
+                  <ul>
+                    <li>Understand threats and vulnerabilities</li>
+                    <li>Secure networks and systems</li>
+                    <li>Practice safe online habits</li>
+                  </ul>`
+      },
+      ux: {
+        title: "Understanding UX Design",
+        date: "September 2025",
+        author: "Reema",
+        img: "images/B2.jpeg",
+        content: `<p>Discover how UX design improves user satisfaction and usability.</p>
+                  <h2>Key Points</h2>
+                  <ul>
+                    <li>Design with users in mind</li>
+                    <li>Improve usability and accessibility</li>
+                    <li>Test and iterate designs</li>
+                  </ul>`
+      },
+      frontend: {
+        title: "Front-End Tips",
+        date: "September 2025",
+        author: "Reema",
+        img: "images/B3.jpeg",
+        content: `<p>Practical front-end development tips to enhance performance and design.</p>
+                  <h2>Best Practices</h2>
+                  <ul>
+                    <li>Organize CSS and JS files properly</li>
+                    <li>Use semantic HTML</li>
+                    <li>Optimize images and assets</li>
+                    <li>Ensure responsiveness across devices</li>
+                  </ul>`
+      },
+      data: {
+        title: "Data Analysis Insights",
+        date: "September 2025",
+        author: "Reema",
+        img: "images/B4.jpeg",
+        content: `<p>Learn techniques to analyze data and make informed decisions.</p>
+                  <h2>Key Techniques</h2>
+                  <ul>
+                    <li>Clean and preprocess data</li>
+                    <li>Use statistical analysis</li>
+                    <li>Create visualizations for insights</li>
+                  </ul>`
+      }
+    };
+
+    const params = new URLSearchParams(window.location.search);
+    const post = params.get("post") || "cybersecurity";
+    const container = document.getElementById("article-container");
+
+    if(articles[post]){
+      const article = articles[post];
+      container.innerHTML = `
+        <h1>${article.title}</h1>
+        <p class="meta">Published on ${article.date} | by ${article.author}</p>
+        <img src="${article.img}" alt="${article.title}" class="article-img">
+        ${article.content}
+        <a href="index.html#blog" class="btn back-left">← Back to Blog</a>
+      `;
+    } else {
+      container.innerHTML = `<h1>Article Not Found</h1>
+                             <p>Sorry, the article you are looking for does not exist.</p>
+                             <a href="index.html#blog" class="btn back-left">← Back to Blog</a>`;
+    }
+  </script>
+</body>
+</html>
