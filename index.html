@@ -3,127 +3,90 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Reema Portfolio</title>
+  <title>Article</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="hero-text">
-      <h1>Hello, I am Reema</h1>
-      <h2>Web Developer</h2>
-      <p>I'm a web developer focused on building (and occasionally designing) exceptional digital experiences.</p>
-      <a href="mailto:reema.alhufayti@gmail.com" class="btn">Contact me</a>
-    </div>
-    <div class="hero-img">
-      <img src="images/profile.jpeg" alt="Reema avatar">
-    </div>
+  <section class="article">
+    <div class="article-container" id="article-container"></div>
   </section>
 
-  <!-- Skills Section -->
-  <section class="skills">
-    <h2>Skills</h2>
-    <div class="scroll-container">
-      <div class="card"><i class="fab fa-html5"></i> HTML</div>
-      <div class="card"><i class="fab fa-css3-alt"></i> CSS</div>
-      <div class="card"><i class="fab fa-js"></i> JavaScript</div>
-      <div class="card"><i class="fab fa-react"></i> React</div>
-      <div class="card"><i class="fab fa-bootstrap"></i> Bootstrap</div>
-      <div class="card"><i class="fas fa-code"></i> TypeScript</div>
-      <div class="card"><i class="fab fa-python"></i> Python</div>
-      <div class="card"><i class="fas fa-database"></i> SQL</div>
-      <div class="card"><i class="fab fa-node-js"></i> Node.js</div>
-      <div class="card"><i class="fas fa-shield-alt"></i> Cybersecurity</div>
-      <div class="card"><i class="fas fa-chart-line"></i> Data Analysis</div>
-    </div>
-  </section>
+  <script>
+    const articles = {
+      cybersecurity: {
+        title: "Intro to Cybersecurity",
+        date: "September 2025",
+        author: "Reema",
+        img: "images/B1.jpeg",
+        content: `<p>Learn the basics of cybersecurity to protect digital assets effectively.</p>
+                  <h2>Key Points</h2>
+                  <ul>
+                    <li>Understand threats and vulnerabilities</li>
+                    <li>Secure networks and systems</li>
+                    <li>Practice safe online habits</li>
+                  </ul>`
+      },
+      ux: {
+        title: "Understanding UX Design",
+        date: "September 2025",
+        author: "Reema",
+        img: "images/B2.jpeg",
+        content: `<p>Discover how UX design improves user satisfaction and usability.</p>
+                  <h2>Key Points</h2>
+                  <ul>
+                    <li>Design with users in mind</li>
+                    <li>Improve usability and accessibility</li>
+                    <li>Test and iterate designs</li>
+                  </ul>`
+      },
+      frontend: {
+        title: "Front-End Tips",
+        date: "September 2025",
+        author: "Reema",
+        img: "images/B3.jpeg",
+        content: `<p>Practical front-end development tips to enhance performance and design.</p>
+                  <h2>Best Practices</h2>
+                  <ul>
+                    <li>Organize CSS and JS files properly</li>
+                    <li>Use semantic HTML</li>
+                    <li>Optimize images and assets</li>
+                    <li>Ensure responsiveness across devices</li>
+                  </ul>`
+      },
+      data: {
+        title: "Data Analysis Insights",
+        date: "September 2025",
+        author: "Reema",
+        img: "images/B4.jpeg",
+        content: `<p>Learn techniques to analyze data and make informed decisions.</p>
+                  <h2>Key Techniques</h2>
+                  <ul>
+                    <li>Clean and preprocess data</li>
+                    <li>Use statistical analysis</li>
+                    <li>Create visualizations for insights</li>
+                  </ul>`
+      }
+    };
 
-  <!-- Projects Section -->
-  <section class="projects">
-    <h2>Projects</h2>
-    <div class="card-grid">
-      <div class="card project">
-        <img src="images/P1.jpeg" alt="SOC Simulation">
-        <h3>SOC Simulation</h3>
-      </div>
-      <div class="card project">
-        <img src="images/P2.jpeg" alt="Data Dashboard">
-        <h3>Data Dashboard</h3>
-      </div>
-      <div class="card project">
-        <img src="images/P3.jpeg" alt="UX Prototype">
-        <h3>UX Prototype</h3>
-      </div>
-    </div>
-  </section>
+    const params = new URLSearchParams(window.location.search);
+    const post = params.get("post") || "cybersecurity";
+    const container = document.getElementById("article-container");
 
-  <!-- Blog Section -->
-  <section class="blog" id="blog">
-    <h2>Blog Highlights</h2>
-    <div class="card-grid">
-      <div class="card blog-post">
-        <img src="images/B1.jpeg" alt="Cybersecurity Basics">
-        <h3>Intro to Cybersecurity</h3>
-        <p>Learn the basics of cybersecurity to protect digital assets effectively.</p>
-        <a href="article.html?post=cybersecurity" class="btn">Read More</a>
-      </div>
-      <div class="card blog-post">
-        <img src="images/B2.jpeg" alt="UX Design">
-        <h3>Understanding UX Design</h3>
-        <p>Discover how UX design improves user satisfaction and usability.</p>
-        <a href="article.html?post=ux" class="btn">Read More</a>
-      </div>
-      <div class="card blog-post">
-        <img src="images/B3.jpeg" alt="Front-End Tips">
-        <h3>Front-End Tips</h3>
-        <p>Practical front-end development tips to enhance performance and design.</p>
-        <a href="article.html?post=frontend" class="btn">Read More</a>
-      </div>
-      <div class="card blog-post">
-        <img src="images/B4.jpeg" alt="Data Analysis Insights">
-        <h3>Data Analysis Insights</h3>
-        <p>Learn techniques to analyze data and make informed decisions.</p>
-        <a href="article.html?post=data" class="btn">Read More</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Two Columns -->
-  <section class="two-col">
-    <div class="col">
-      <h2><i class="fas fa-comment-dots"></i> Testimonials</h2>
-      <p>“Reema’s work is exceptional! She is a highly skilled developer who consistently delivers high-quality projects on time.”</p>
-    </div>
-    <div class="col">
-      <h2><i class="fas fa-briefcase"></i> Services</h2>
-      <p>Web Development, UI/UX Design, Cybersecurity Basics.</p>
-    </div>
-  </section>
-
-  <!-- Social Section -->
-  <section class="social">
-    <h2 style="text-align:left; margin-left:30%; margin-bottom:20px;">Connect with me</h2>
-    <div class="social-links">
-      <a href="https://github.com/ReemaDevX" target="_blank"><i class="fab fa-github"></i></a>
-      <a href="https://www.linkedin.com/in/reema-a-455b26368" target="_blank"><i class="fab fa-linkedin"></i></a>
-      <a href="https://twitter.com/ReemaDevX" target="_blank" aria-label="X/Twitter">
-        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 1200 1227" fill="white">
-          <path d="M714.163 519.284L1160.89 0H1057.03L667.137 450.887L369.728 0H0L468.882 
-          681.821L0 1226.37H103.866L515.345 750.218L830.398 1226.37H1200L714.137 
-          519.284H714.163ZM568.766 689.098L521.705 620.814L141.153 
-          79.694H317.316L617.73 511.48L664.791 579.764L1056.06 
-          1166.66H879.896L568.766 689.072V689.098Z"/>
-        </svg>
-      </a>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <p>© <span id="year"></span> Reema Alhufayti</p>
-  </footer>
-
-  <script src="script.js"></script>
+    if(articles[post]){
+      const article = articles[post];
+      container.innerHTML = `
+        <h1>${article.title}</h1>
+        <p class="meta">Published on ${article.date} | by ${article.author}</p>
+        <img src="${article.img}" alt="${article.title}" class="article-img">
+        ${article.content}
+        <a href="index.html#blog" class="btn back-left">← Back to Blog</a>
+      `;
+    } else {
+      container.innerHTML = `<h1>Article Not Found</h1>
+                             <p>Sorry, the article you are looking for does not exist.</p>
+                             <a href="index.html#blog" class="btn back-left">← Back to Blog</a>`;
+    }
+  </script>
 </body>
 </html>
